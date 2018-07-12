@@ -44,7 +44,7 @@ class work{
 				root=new tree(v);
 				return root;
 			}
-			if(root.val<v)
+			if(root.val>v)
 			{
 				root.left=insert(v,root.left);
 				
@@ -64,14 +64,14 @@ class work{
 			if(node.left!=null)
 			{
 				tree left=convert(node.left);
-				for(;left.right!=null;left=left.right)
+				for(;left.right!=null;left=left.right);
 				{
 					left.right=node;
 					node.left=left;
 				}}
 			if(node.right!=null) {
 				tree right=convert(node.right);
-			for(;right.left!=null;right=right.left)
+			for(;right.left!=null;right=right.left);
 			{
 				right.left=node;
 				node.right=right;
