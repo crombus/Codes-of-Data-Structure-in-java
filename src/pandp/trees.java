@@ -2,7 +2,7 @@ package pandp;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
+import java.util.*;
 
 public class trees {
 
@@ -23,6 +23,7 @@ b.insert(5, root);
 b.insert(6, root);
 b.insert(7, root);
 //b.printqt(root);
+b.top_view(root);
 tree head=b.cons(root);
 
 b.print(head);
@@ -36,6 +37,15 @@ class tree{
 		this.val=v;
 		this.left=this.right=null;
 	}}
+class item{
+	tree node;
+	int hd;
+	item(tree n,int h)
+	{
+		this.node=n;
+		this.hd=h;
+	}
+}
 class work{
 	 tree insert(int v,tree root)
 		{
@@ -107,6 +117,35 @@ class work{
 				if(tm.right!=null)
 				{
 					q.add(tm.right);
+				}
+			}
+		}
+		void top_view(tree node)
+		{
+			System.out.println(" heloo");
+			if(node==null)
+			{
+				return;
+			}
+			Queue<item>	q=new LinkedList<item>();
+			HashSet<Integer> hm=new HashSet<Integer>();
+			q.add(new item(node,0));
+			while(!q.isEmpty()) {
+				item n=q.remove();
+				int h=n.hd;
+				while(!hm.contains(h)) {
+					hm.add(h);
+					System.out.print(n.node.val+" ");
+				}
+				if(n.node.left!=null)
+				{
+					q.add(new item(n.node.left,h-1));
+					//node=node.left;
+				}
+				if(n.node.right!=null)
+				{
+					q.add(new item(n.node.right,h+1));
+					//node=node.right;
 				}
 			}
 		}
