@@ -14,6 +14,8 @@ l.aab("40");
 l.dap("0");
 l.aap("5", "50");
 l.display();
+l.reverse();
+l.display();
 	}
 
 }
@@ -93,8 +95,23 @@ class practice extends ll{
 			System.out.println("not a valid position");
 		}
 	}
+	void reverse()
+	{
+		ll prev=null;
+		ll curr=head;
+		ll next=null;
+		while(curr!=null)
+		{
+			next=curr.next;
+			curr.next=prev;
+			prev=curr;
+			curr=next;
+		}
+		head=prev;
+	}
 	void display()
 	{
+		System.out.println("plane plane");
 		ll curr=head;
 		while(curr!=null)
 		{
