@@ -25,10 +25,30 @@ public class numbers {
 		}
 		return path(m-1,n)+path(m,n-1);
 	}
+	static void nge(int a[])//replace element with next greater element 
+	{
+		int s=a.length;
+		int max=a[s-1];
+		a[s-1]=-1;
+		for(int i=s-2;i>=0;i--)
+		{
+			int temp=a[i];
+			a[i]=max;
+			if(max<temp)
+			{
+				max=temp;
+			}
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
 System.out.println(path(3,3));
-	}
+int a[]={16,17,4,3,5,2,1};
+nge(a);
+for(int i=0;i<a.length;i++)
+{
+System.out.println(a[i]);
+	}}
 
 }
