@@ -5,13 +5,13 @@ public class strings {
 	static  int substring1(String s)//start with 1 and end with 1
 	{
 		int res=0;
-		for(int i=0;i<s.length();i++)
+		for(int i=0;i<s.length();i++)//hello
 		{
 			if(s.charAt(i)=='1')
 				res++;
 		}
 		
-		return res*(res-1)/2;
+		return res*(res-1)/2;//nice formula for doing this
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
