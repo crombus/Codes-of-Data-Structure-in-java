@@ -40,6 +40,19 @@ public class numbers {
 			}
 		}
 	}
+	static int maxpowerof2(int n)
+	{
+		int res=0;
+		for(int i=n;i>=1;i--)
+		{
+			if((i&(i-1))==0)
+			{
+				res=i;
+				break;
+			}
+		}
+		return res;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
@@ -49,6 +62,8 @@ nge(a);
 for(int i=0;i<a.length;i++)
 {
 System.out.println(a[i]);
-	}}
+	}
+System.out.println(maxpowerof2(30));
+}
 
 }
