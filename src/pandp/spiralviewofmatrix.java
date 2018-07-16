@@ -8,7 +8,7 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 int r=Integer.parseInt(br.readLine());
 int c=Integer.parseInt(br.readLine());
 //int a[][]=new int[r*c];
-int a[][]= {{1,2,3},{4,5,6},{7,8,9}};
+int a[][]= {{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
 /*for(int i=0;i<r;i++)
 {
 	for(int j=0;j<c;j++)
@@ -31,7 +31,7 @@ while(l<r&&m<c)
 	}
 	c--;
 	if(l<r) {
-		for(int i=c-1;i>0;i--)
+		for(int i=c-1;i>=m;i--)
 		{
 			System.out.println(a[r-1][i]);
 		}
