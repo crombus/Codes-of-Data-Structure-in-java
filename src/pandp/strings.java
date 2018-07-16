@@ -2,6 +2,17 @@ package pandp;
 
 public class strings {
 
+	static  int substring1(String s)//start with 1 and end with 1
+	{
+		int res=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)=='1')
+				res++;
+		}
+		
+		return res*(res-1)/2;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String s="hellloooo i am in";
@@ -33,5 +44,7 @@ System.out.println("reverse");
     for (char c : temparray)
         System.out.print(c);
     System.out.println();
+    System.out.println("#################################new code#############################");
+    System.out.println(substring1("0011000000000010101001010100110001010101111111111110000001011"));
 }
 }
