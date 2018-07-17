@@ -53,7 +53,7 @@ public class numbers {
 		}
 		return res;
 	}
-	static int countsubseq(String s)
+	static int countsubseq(String s)//sub sequences of seq containg only abc like patternns for abbc are abc abbc abc
 	{
 		int acount=0,bcount=0,ccount=0;
 		for(int i=0;i<s.length();i++)
