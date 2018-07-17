@@ -35,6 +35,7 @@ b.insert(4, root);
 b.insert(5, root);
 b.insert(6, root);
 b.insert(7, root);
+b.leftview(root, 1);
 if (b.isisomorphic(root,root1) == true)//https://www.geeksforgeeks.org/tree-isomorphism-problem/
     System.out.println("yes");
 else
@@ -182,6 +183,18 @@ class work{
 				}
 			}
 		}
+		static int  max_level = 0;
+	    void leftview(tree node, int level)
+	    {
+	        if (node==null) return;
+	        if (max_level < level)
+	        {
+	            System.out.print(" " + node.val);
+	            max_level = level;
+	        }
+	        leftview(node.left, level+1);
+	        leftview(node.right, level+1);
+	    }
 	void print(tree node) 
     {
 		System.out.println("doubly linked list");
