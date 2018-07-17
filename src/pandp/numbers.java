@@ -40,7 +40,7 @@ public class numbers {
 			}
 		}
 	}
-	static int maxpowerof2(int n)
+	static int maxpowerof2(int n)//new code of max power of 2
 	{
 		int res=0;
 		for(int i=n;i>=1;i--)
@@ -53,6 +53,27 @@ public class numbers {
 		}
 		return res;
 	}
+	static int countsubseq(String s)
+	{
+		int acount=0,bcount=0,ccount=0;
+		for(int i=0;i<s.length();i++)
+		{
+			
+			if(s.charAt(i)=='a')
+			{
+				acount=1+2*acount;
+			}
+			if(s.charAt(i)=='b')
+			{
+				bcount=acount+2*bcount;
+			}
+			if(s.charAt(i)=='c')
+			{
+				ccount=bcount+2*ccount;
+			}
+		}
+		return ccount;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
@@ -64,6 +85,7 @@ for(int i=0;i<a.length;i++)
 System.out.println(a[i]);
 	}
 System.out.println(maxpowerof2(30));
+System.out.println(countsubseq("abbc"));
 }
 
 }
