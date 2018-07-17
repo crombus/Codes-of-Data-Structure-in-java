@@ -11,7 +11,7 @@ public class trees {
 work b=new work();
 tree root=null;
 tree root1=null;
-root1=b.insert(50, root1);
+root1=b.insert(10, root1);
 b.insert(120, root1);
 b.insert(101, root1);
 b.insert(110, root1);
