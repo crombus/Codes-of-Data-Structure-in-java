@@ -24,6 +24,8 @@ b.insert(6, root);
 b.insert(7, root);
 //b.printqt(root);
 b.top_view(root);
+System.out.println("###########################################################");
+b.distfromknode(root, 2);
 tree head=b.cons(root);
 
 b.print(head);
@@ -119,6 +121,20 @@ class work{
 					q.add(tm.right);
 				}
 			}
+		}
+		void distfromknode(tree root,int k)
+		{
+			if(root==null)
+				return;
+			if(k==0)
+			{
+				System.out.println("this for distance "+root.val+" ");
+				return;
+			}
+			else {
+			distfromknode(root.left,k-1);
+			distfromknode(root.right,k-1);}
+			
 		}
 		void top_view(tree node)
 		{
