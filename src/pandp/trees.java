@@ -10,6 +10,19 @@ public class trees {
 		// TODO Auto-generated method stub
 work b=new work();
 tree root=null;
+tree root1=null;
+root1=b.insert(50, root1);
+b.insert(120, root1);
+b.insert(101, root1);
+b.insert(110, root1);
+b.insert(103, root1);
+b.insert(104, root1);
+b.insert(2, root1);
+b.insert(3, root1);
+b.insert(4, root1);
+b.insert(5, root1);
+b.insert(6, root1);
+b.insert(7, root1);
 root=b.insert(10, root);
 b.insert(120, root);
 b.insert(101, root);
@@ -22,6 +35,10 @@ b.insert(4, root);
 b.insert(5, root);
 b.insert(6, root);
 b.insert(7, root);
+if (b.isisomorphic(root,root1) == true)//https://www.geeksforgeeks.org/tree-isomorphism-problem/
+    System.out.println("yes");
+else
+    System.out.println("no");
 //b.printqt(root);
 b.top_view(root);
 System.out.println("###########################################################");
@@ -173,5 +190,16 @@ class work{
             System.out.print(node.val + " ");
             node = node.right;
         }
-    }}
+    }
+	boolean isisomorphic(tree n1, tree n2) 
+    {
+        if (n1 == null && n2 == null)
+            return true;
+        if (n1 == null || n2 == null)
+            return false; 
+        if (n1.val != n2.val)
+            return false;
+        return (isisomorphic(n1.left, n2.left) && isisomorphic(n1.right, n2.right)) || (isisomorphic(n1.left, n2.right) && isisomorphic(n1.right, n2.left));
+    }
+	}
 
