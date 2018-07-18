@@ -1,5 +1,7 @@
 package pandp;
 
+import java.util.HashMap;
+
 public class numbers {
 
 	static int conv0To5(int num)
@@ -92,6 +94,19 @@ public class numbers {
 		}
 		return -1;
 	}
+	static Boolean sub0(int arr[])
+    {
+        HashMap<Integer, Integer> hm =   new HashMap<Integer, Integer>();
+        int sum = 0;     
+        for (int i = 0; i < arr.length; i++)
+        { 
+            sum += arr[i];
+            if (arr[i] == 0 || sum == 0 || hm.get(sum) != null)                         
+                return true;
+            hm.put(sum, i);
+        } 
+         
+        return false;}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
@@ -106,6 +121,7 @@ System.out.println(maxpowerof2(30));
 System.out.println(countsubseq("abbc"));
 int b[]= {11,12,13,14,15};
 System.out.println("this first repeates chaacter"+firstnum(b,1));
+System.out.println(sub0(b));
 }
 
 }
