@@ -101,8 +101,10 @@ public class numbers {
         for (int i = 0; i < arr.length; i++)
         { 
             sum += arr[i];
-            if (arr[i] == 0 || sum == 0 || hm.get(sum) != null)                         
-                return true;
+            if (arr[i] == 0 || sum == 0 || hm.get(sum) != null) 
+            {
+            	System.out.println(hm.get(sum)+1+" "+i);
+                return true;}
             hm.put(sum, i);
         } 
          
@@ -119,8 +121,8 @@ System.out.println(a[i]);
 	}
 System.out.println(maxpowerof2(30));
 System.out.println(countsubseq("abbc"));
-int b[]= {11,12,13,14,15};
-System.out.println("this first repeates chaacter"+firstnum(b,1));
+int b[]= {11,12,13,14,1,-1};
+//System.out.println("this first repeates chaacter"+firstnum(b,1));
 System.out.println(sub0(b));
 }
 
