@@ -42,6 +42,9 @@ else
     System.out.println("no");
 //b.printqt(root);
 b.top_view(root);
+System.out.println("right view!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+maxl max=new maxl();
+b.rightview(root, 1,max);
 System.out.println("###########################################################");
 b.distfromknode(root, 2);
 tree head=b.cons(root);
@@ -65,6 +68,9 @@ class item{
 		this.node=n;
 		this.hd=h;
 	}
+}
+class maxl{
+	int maxlev;
 }
 class work{
 	 tree insert(int v,tree root)
@@ -194,6 +200,19 @@ class work{
 	        }
 	        leftview(node.left, level+1);
 	        leftview(node.right, level+1);
+	    }
+	    maxl max=new maxl();
+	    void rightview(tree node,int l, maxl max)
+	    {
+	    	if(node==null)
+	    		return;
+	    	if(max.maxlev<l)
+	    	{
+	    		System.out.println(node.val+" ");
+	    		max.maxlev=l;
+	    	}
+	    	rightview(node.right,l+1,max);
+	    	rightview(node.left,l+1,max);
 	    }
 	void print(tree node) 
     {
