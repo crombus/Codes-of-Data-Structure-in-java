@@ -74,6 +74,24 @@ public class numbers {
 		}
 		return ccount;
 	}
+	static int firstnum(int a[],int k)
+	{
+		if(a.length==0)
+		{
+			return -1;
+		}
+		int arr[]=new int[1000];
+		for(int i=0;i<a.length;i++)
+		{
+			arr[a[i]]++;
+		}
+		for(int i=0;i<a.length;i++)
+		{
+			if(arr[a[i]]==k)
+				return a[i];
+		}
+		return -1;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
@@ -86,6 +104,8 @@ System.out.println(a[i]);
 	}
 System.out.println(maxpowerof2(30));
 System.out.println(countsubseq("abbc"));
+int b[]= {11,12,13,14,15};
+System.out.println("this first repeates chaacter"+firstnum(b,1));
 }
 
 }
