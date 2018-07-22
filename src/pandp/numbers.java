@@ -1,6 +1,7 @@
 package pandp;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class numbers {
 
@@ -109,6 +110,35 @@ public class numbers {
         } 
          
         return false;}
+	static int firstnum1(int a[],int k)
+	{
+		if(a.length==0)
+		{
+			return -1;
+		}
+		HashMap arr = new LinkedHashMap();
+
+		//int arr[]=new int[1000];
+		for(int i=0;i<a.length;i++)
+		{
+			String val = String.valueOf(a[i]);
+			if(arr.containsKey(val))
+			{
+				int v=(int) arr.get(val);
+				arr.put(val,v+1);	
+			}
+			else {
+				arr.put(val, 1);
+			}
+		}
+		for (Object o : arr.keySet()) {
+		      if (arr.get(o).equals(k)) {
+		        return Integer.parseInt(o.toString());
+		      }
+		    }
+		return -1;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println(convert0to5(Integer.parseInt(("1032000706"))));
@@ -124,6 +154,7 @@ System.out.println(countsubseq("abbc"));
 int b[]= {11,12,13,14,1,-1};
 //System.out.println("this first repeates chaacter"+firstnum(b,1));
 System.out.println(sub0(b));
+System.out.println(" sdcds"+firstnum1(a,1));
 }
 
 }
