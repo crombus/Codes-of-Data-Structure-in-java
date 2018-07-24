@@ -7,6 +7,7 @@ public class pattern {
 pat(16);
 int a[]= {2,0,2};
 System.out.println(fillthewater(a));
+pascalstri(6);
 	}
 static void pat(int n)
 {
@@ -40,5 +41,18 @@ static int fillthewater(int a[])//https://www.geeksforgeeks.org/trapping-rain-wa
 		water+=Math.min(l[i], r[i])-a[i];
 	}
 	return water;
+}
+static void pascalstri(int n)
+{
+	for(int i=1;i<=n;i++)
+	{
+		int c=1;
+		for(int j=1;j<=i;j++)
+		{
+			System.out.print(c+" ");
+			c=c*(i-j)/j;
+		}
+		System.out.println();
+	}
 }
 }
