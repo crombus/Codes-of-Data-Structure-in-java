@@ -19,7 +19,7 @@ static void pat(int n)
 	pat(n-5);
 	System.out.println(n+" ");
 }
-static int fillthewater(int a[])
+static int fillthewater(int a[])//https://www.geeksforgeeks.org/trapping-rain-water/
 {
 	int water=0;
 	int s=a.length;
