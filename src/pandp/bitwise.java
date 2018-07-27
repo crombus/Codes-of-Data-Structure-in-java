@@ -45,12 +45,22 @@ public class bitwise {
 	 
 	        return ans;
 	    }
-
+	 static int rightmostbit(int n)
+	 {
+		 return (int)(Math.log10(n & -n)/Math.log10(2))+1;
+	 }
+    static int differentrightmostbit(int m,int n)
+    {
+    	return rightmostbit(m)^rightmostbit(n);
+    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 int n=3;
 System.out.println(setbit(n));//complexity(nlogn)
 System.out.println(setbits2(n));//complexity(k*n)
+System.out.println("right most bit of"+rightmostbit(16));
+System.out.println("different bit from right of these two numbers"+differentrightmostbit(16,45));
+
 	}
 
 }
