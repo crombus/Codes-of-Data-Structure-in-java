@@ -1,8 +1,7 @@
 package pandp;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class trees {
 
@@ -36,6 +35,7 @@ b.insert(5, root);
 b.insert(6, root);
 b.insert(7, root);
 b.leftview(root, 1);
+b.diagonalprint(root);
 if (b.isisomorphic(root,root1) == true)//https://www.geeksforgeeks.org/tree-isomorphism-problem/
     System.out.println("yes");
 else
@@ -75,6 +75,7 @@ class maxl{
 class work{
 	 tree insert(int v,tree root)
 		{
+		 
 			if(root==null)
 			{
 				root=new tree(v);
@@ -223,6 +224,34 @@ class work{
             node = node.right;
         }
     }
+	void diagonal(tree root,int d,HashMap<Integer,Vector<Integer>> diag)
+	{
+		if(root==null)
+			return;
+		Vector<Integer> k=diag.get(d);
+		if(k==null)
+		{
+	      k=new Vector();
+			k.add(root.val);
+		}
+		else
+		{
+			k.add(root.val);
+		}
+		diag.put(d, k);
+		diagonal(root.left,d+1,diag);
+		diagonal(root.right,d,diag);
+	}
+	void diagonalprint(tree root)
+	{
+		HashMap<Integer,Vector<Integer>> diag=new HashMap();
+		diagonal(root,0,diag);
+		System.out.println("diagonal print");
+		for(Entry<Integer, Vector<Integer>> entry : diag.entrySet())
+		{
+			System.out.println(entry.getValue());
+		}
+	}
 	boolean isisomorphic(tree n1, tree n2) 
     {
         if (n1 == null && n2 == null)
