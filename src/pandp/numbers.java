@@ -155,6 +155,7 @@ int b[]= {11,12,13,14,1,-1};
 //System.out.println("this first repeates chaacter"+firstnum(b,1));
 System.out.println(sub0(b));
 System.out.println(" sdcds"+firstnum1(a,1));
+
 }
 
 }
