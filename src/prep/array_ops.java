@@ -20,4 +20,9 @@ class array_ops{
                                                                                 
         for(int i = 0;i < size;i++){                                            
             System.out.print(array[i] + " ");}}                                 
+
+    void display_blank_line_with_message(String msg){
+        System.out.println();
+        System.out.println("----------------"+msg+"------------------------------");
+        System.out.println();}
 }
